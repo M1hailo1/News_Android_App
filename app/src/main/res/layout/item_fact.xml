@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginBottom="8dp">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="404dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="match_parent"
+                android:layout_height="73dp"
+                android:fontFamily="sans-serif"
+                android:text="Naslov"
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/description_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text="Ovo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekst" />
+
+            <ImageView
+                android:id="@+id/urlToImage_Image"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                app:srcCompat="@android:drawable/ic_menu_report_image" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
