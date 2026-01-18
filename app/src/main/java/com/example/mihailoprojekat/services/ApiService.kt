@@ -10,7 +10,8 @@ interface ApiService {
     fun getTopHeadlines(
         @Query("category") category: String = "general",
         @Query("lang") lang: String = "en",
-        @Query("country") country: String = "us",
+        @Query("country") country: String,
+        @Query("q") query: String? = null,
         @Query("max") max: Int = 10,
         @Query("apikey") apiKey: String
     ): Call<Response>
