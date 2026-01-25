@@ -21,6 +21,10 @@ class MainActivity : AppCompatActivity() {
                     loadFragment(HomeFragment())
                     true
                 }
+                R.id.bookmarks -> {
+                    loadFragment(BookmarksFragment())
+                    true
+                }
                 R.id.profile -> {
                     loadFragment(ProfileFragment())
                     true

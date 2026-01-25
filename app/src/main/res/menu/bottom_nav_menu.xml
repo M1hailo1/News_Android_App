@@ -6,6 +6,11 @@
         android:icon="@drawable/logo_v2"
         />
     <item
+        android:id="@+id/bookmarks"
+        android:title="Bookmarks"
+        android:icon="@android:drawable/btn_star_big_on"
+        />
+    <item
         android:id="@+id/profile"
         android:title="Profile"
         android:icon="@drawable/logo_v2"

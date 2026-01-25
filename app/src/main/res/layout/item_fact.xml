@@ -10,7 +10,6 @@
     android:layout_marginRight="16dp"
     android:layout_marginBottom="8dp">
 
-
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -22,17 +21,34 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="404dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/title_text"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="73dp"
-                android:fontFamily="sans-serif"
-                android:text="Naslov"
-                android:textAlignment="center"
-                android:textSize="20sp" />
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/title_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="73dp"
+                    android:layout_marginEnd="48dp"
+                    android:fontFamily="sans-serif"
+                    android:text="Naslov"
+                    android:textAlignment="center"
+                    android:textSize="20sp" />
+
+                <ImageButton
+                    android:id="@+id/bookmark_button"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@android:drawable/btn_star_big_off"
+                    android:contentDescription="Bookmark" />
+
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/description_text"
@@ -40,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="3"
-                android:text="Ovo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekstOvo je tekst" />
+                android:text="Ovo je tekst" />
 
             <ImageView
                 android:id="@+id/urlToImage_Image"
@@ -52,4 +68,3 @@
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
