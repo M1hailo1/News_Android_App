@@ -161,6 +161,8 @@ class HomeFragment : Fragment() {
                 call: Call<Response>,
                 response: retrofit2.Response<Response>
             ) {
+                if (!isAdded) return
+
                 swipeRefreshLayout.isRefreshing = false
 
                 if (response.isSuccessful) {
@@ -187,6 +189,8 @@ class HomeFragment : Fragment() {
             }
 
             override fun onFailure(call: Call<Response>, t: Throwable) {
+                if (!isAdded) return
+
                 swipeRefreshLayout.isRefreshing = false
 
                 Toast.makeText(

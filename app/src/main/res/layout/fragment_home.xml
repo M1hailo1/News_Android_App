@@ -3,109 +3,141 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/background">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:gravity="center_vertical">
-
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/logo_v2" />
-
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/searchView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="@android:drawable/edit_text"
-            app:queryHint="Search..."
-            app:iconifiedByDefault="false"/>
-
-        <ImageView
-            android:id="@+id/flag_button"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:scaleType="fitCenter"
-            android:src="@drawable/earth" />
-    </LinearLayout>
-
-    <HorizontalScrollView
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scrollbars="none"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp">
+        app:cardElevation="4dp"
+        app:cardCornerRadius="0dp">
 
-        <com.google.android.material.chip.ChipGroup
-            android:id="@+id/categoryChipGroup"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:singleSelection="true"
-            app:selectionRequired="true">
+            android:orientation="vertical"
+            android:background="@color/primary"
+            android:padding="12dp">
 
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_general"
-                style="@style/Widget.Material3.Chip.Filter"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="General"
-                android:checked="true"/>
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="24dp">
 
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_business"
-                style="@style/Widget.Material3.Chip.Filter"
-                android:layout_width="wrap_content"
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/logo_v2" />
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/searchView"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/search_background"
+                    app:queryHint="Search news..."
+                    app:iconifiedByDefault="false"
+                    app:queryBackground="@android:color/transparent"/>
+
+                <ImageView
+                    android:id="@+id/flag_button"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/earth" />
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Business"/>
+                android:scrollbars="none"
+                android:layout_marginTop="8dp">
 
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_entertainment"
-                style="@style/Widget.Material3.Chip.Filter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Entertainment"/>
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/categoryChipGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="true"
+                    app:selectionRequired="true">
 
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_health"
-                style="@style/Widget.Material3.Chip.Filter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Health"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_general"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="General"
+                        android:checked="true"
+                        app:chipBackgroundColor="@android:color/white"
+                        android:textColor="@color/primary"/>
 
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_science"
-                style="@style/Widget.Material3.Chip.Filter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Science"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_business"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Business"
+                        app:chipBackgroundColor="@android:color/white"
+                        android:textColor="@color/primary"/>
 
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_sports"
-                style="@style/Widget.Material3.Chip.Filter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sports"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_entertainment"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Entertainment"
+                        app:chipBackgroundColor="@android:color/white"
+                        android:textColor="@color/primary"/>
 
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_technology"
-                style="@style/Widget.Material3.Chip.Filter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Technology"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_health"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Health"
+                        app:chipBackgroundColor="@android:color/white"
+                        android:textColor="@color/primary"/>
 
-        </com.google.android.material.chip.ChipGroup>
-    </HorizontalScrollView>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_science"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Science"
+                        app:chipBackgroundColor="@android:color/white"
+                        android:textColor="@color/primary"/>
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_sports"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sports"
+                        app:chipBackgroundColor="@android:color/white"
+                        android:textColor="@color/primary"/>
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip_technology"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Technology"
+                        app:chipBackgroundColor="@android:color/white"
+                        android:textColor="@color/primary"/>
+
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipeRefreshLayout"
@@ -115,7 +147,9 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/itemRV"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:clipToPadding="false"/>
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 

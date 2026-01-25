@@ -4,6 +4,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mihailoprojekat.ArticleDetailsActivity
 import com.example.mihailoprojekat.BookmarkManager
@@ -31,10 +32,17 @@ class Adapter(
         holder.bind(article)
 
         BookmarkManager.isBookmarked(article.url) { isBookmarked ->
-            holder.bookmarkButton.setImageResource(
-                if (isBookmarked) android.R.drawable.btn_star_big_on
-                else android.R.drawable.btn_star_big_off
-            )
+            if (isBookmarked) {
+                holder.bookmarkButton.setImageResource(android.R.drawable.btn_star_big_on)
+                holder.bookmarkButton.setColorFilter(
+                    ContextCompat.getColor(holder.itemView.context, R.color.accent)
+                )
+            } else {
+                holder.bookmarkButton.setImageResource(android.R.drawable.btn_star_big_off)
+                holder.bookmarkButton.setColorFilter(
+                    ContextCompat.getColor(holder.itemView.context, R.color.text_secondary)
+                )
+            }
         }
 
         holder.bookmarkButton.setOnClickListener {
@@ -43,6 +51,9 @@ class Adapter(
                     BookmarkManager.removeBookmark(article.url) { success ->
                         if (success) {
                             holder.bookmarkButton.setImageResource(android.R.drawable.btn_star_big_off)
+                            holder.bookmarkButton.setColorFilter(
+                                ContextCompat.getColor(holder.itemView.context, R.color.text_secondary)
+                            )
                             Toast.makeText(holder.itemView.context, "Bookmark removed", Toast.LENGTH_SHORT).show()
                         }
                     }
@@ -50,6 +61,9 @@ class Adapter(
                     BookmarkManager.saveBookmark(article) { success ->
                         if (success) {
                             holder.bookmarkButton.setImageResource(android.R.drawable.btn_star_big_on)
+                            holder.bookmarkButton.setColorFilter(
+                                ContextCompat.getColor(holder.itemView.context, R.color.accent)
+                            )
                             Toast.makeText(holder.itemView.context, "Bookmark saved", Toast.LENGTH_SHORT).show()
                         }
                     }
