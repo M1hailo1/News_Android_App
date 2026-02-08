@@ -72,4 +72,6 @@ dependencies {
         implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
         implementation("com.google.firebase:firebase-auth-ktx")
         implementation("com.google.firebase:firebase-firestore-ktx")
+
+        implementation("androidx.biometric:biometric:1.1.0")
 }

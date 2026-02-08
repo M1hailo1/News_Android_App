@@ -43,6 +43,14 @@
         android:backgroundTint="@color/accent"
         android:text="Login" />
 
+    <Button
+        android:id="@+id/fingerprintBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login with Fingerprint"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/accent"/>
+
     <TextView
         android:id="@+id/registerNow"
         android:layout_width="match_parent"
